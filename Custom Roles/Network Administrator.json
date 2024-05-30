@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "roleName": {
+      "value": "Network Administrator"
+    },
+    "roleDescription": {
+      "value": "Manages platform-wide global connectivity, such as virtual networks, UDRs, NSGs, NVAs, VPNs, Azure ExpressRoute, and others"
+    },
+    "location": {
+      "value": "canadaeast"
+    },
+    "managementGroupId": {
+      "value": "mg-root"
+    },
+    "scope": {
+      "value": "managementGroup"
+    },
+    "actions": {
+      "value": [
+        "*/read",
+        "Microsoft.Network/*",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Support/*"
+      ]
+    },
+    "notActions": {
+      "value": []
+    },
+    "dataActions": {
+      "value": []
+    },
+    "notDataActions": {
+      "value": []
+    }
+  }
+}

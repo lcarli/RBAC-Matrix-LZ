@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "roleName": {
+        "value": "AppGateway Health Probe Reader"
+      },
+      "roleDescription": {
+        "value": "Check health probe on Applicatio Gateway"
+      },
+      "location": {
+        "value": "canadaeast"
+      },
+      "managementGroupId": {
+        "value": "mg-root"
+      },
+      "scope": {
+        "value": "managementGroup"
+      },
+      "actions": {
+        "value": [
+          "Microsoft.Network/applicationGateways/getBackendHealthOnDemand/action",
+          "Microsoft.Network/applicationGateways/backendhealth/action"
+        ]
+      },
+      "notActions": {
+        "value": []
+      },
+      "dataActions": {
+        "value": []
+      },
+      "notDataActions": {
+        "value": []
+      }
+    }
+  }

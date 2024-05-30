@@ -1,0 +1,46 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "roleName": {
+      "value": "Security Administrator"
+    },
+    "roleDescription": {
+      "value": "Security Administrator role with a horizontal view across the entire Azure estate and the Key Vault purge policy"
+    },
+    "location": {
+      "value": "canadaeast"
+    },
+    "managementGroupId": {
+      "value": "mg-root"
+    },
+    "scope": {
+      "value": "managementGroup"
+    },
+    "actions": {
+      "value": [
+        "*/read",
+        "*/register/action",
+        "Microsoft.KeyVault/locations/deletedVaults/purge/action",
+        "Microsoft.PolicyInsights/*",
+        "Microsoft.Authorization/policyAssignments/*",
+        "Microsoft.Authorization/policyDefinitions/*",
+        "Microsoft.Authorization/policyExemptions/*",
+        "Microsoft.Authorization/policySetDefinitions/*",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Security/*",
+        "Microsoft.Support/*"
+      ]
+    },
+    "notActions": {
+      "value": []
+    },
+    "dataActions": {
+      "value": []
+    },
+    "notDataActions": {
+      "value": []
+    }
+  }
+}

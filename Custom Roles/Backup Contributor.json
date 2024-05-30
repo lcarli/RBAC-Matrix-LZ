@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "roleName": {
+      "value": "Backup Contributor"
+    },
+    "roleDescription": {
+      "value": "Responsible for managing backup policies and backup operations across Azure resources, ensuring compliance with organizational backup requirements."
+    },
+    "location": {
+      "value": "canadaeast"
+    },
+    "managementGroupId": {
+      "value": "mg-root"
+    },
+    "scope": {
+      "value": "managementGroup"
+    },
+    "actions": {
+      "value": [
+        "*/read",
+        "Microsoft.RecoveryServices/vaults/backupFabrics/backupProtectionIntent/write",
+        "Microsoft.RecoveryServices/vaults/backupPolicies/*",
+        "Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems/*",
+        "Microsoft.RecoveryServices/vaults/backupJobs/*",
+        "Microsoft.RecoveryServices/vaults/restore/*",
+        "Microsoft.RecoveryServices/vaults/backupConfig/*",
+        "Microsoft.Support/*"
+      ]
+    },
+    "notActions": {
+      "value": [
+        "Microsoft.RecoveryServices/vaults/delete",
+        "Microsoft.RecoveryServices/vaults/write"
+      ]
+    },
+    "dataActions": {
+      "value": []
+    },
+    "notDataActions": {
+      "value": []
+    }
+  }
+}

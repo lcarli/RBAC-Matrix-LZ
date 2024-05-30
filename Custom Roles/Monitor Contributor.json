@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "roleName": {
+      "value": "Monitoring Contributor"
+    },
+    "roleDescription": {
+      "value": "Responsible for managing monitoring tasks, viewing metrics, alerts, and logs across Azure resources to ensure operational health."
+    },
+    "location": {
+      "value": "canadaeast"
+    },
+    "managementGroupId": {
+      "value": "mg-root"
+    },
+    "scope": {
+      "value": "managementGroup"
+    },
+    "actions": {
+      "value": [
+        "*/read",
+        "Microsoft.Insights/metrics/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Insights/metricAlerts/*",
+        "Microsoft.Insights/logDefinitions/read",
+        "Microsoft.Insights/logProfiles/*",
+        "Microsoft.Insights/diagnosticSettings/*",
+        "Microsoft.OperationalInsights/workspaces/*",
+        "Microsoft.Insights/workbooks/*",
+        "Microsoft.Support/*"
+      ]
+    },
+    "notActions": {
+      "value": []
+    },
+    "dataActions": {
+      "value": [
+        "Microsoft.Insights/alerts/read",
+        "Microsoft.OperationalInsights/workspaces/logs/read"
+      ]
+    },
+    "notDataActions": {
+      "value": []
+    }
+  }
+}

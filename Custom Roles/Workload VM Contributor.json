@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "roleName": {
+      "value": "Workload VM Contributor"
+    },
+    "roleDescription": {
+      "value": "Complementary VM management inside a landing zone."
+    },
+    "location": {
+      "value": "canadaeast"
+    },
+    "managementGroupId": {
+      "value": "mg-root"
+    },
+    "scope": {
+      "value": "managementGroup"
+    },
+    "actions": {
+      "value": [
+        "Microsoft.Network/virtualNetworks/joinLoadBalancer/action",
+        "Microsoft.KeyVault/vaults/deploy/action",
+        "Microsoft.Network/networkSecurityGroups/join/action",
+        "Microsoft.Network/virtualNetworks/subnets/join/action",
+        "Microsoft.OperationalInsights/workspaces/listKeys/action"
+      ]
+    },
+    "notActions": {
+      "value": []
+    },
+    "dataActions": {
+      "value": []
+    },
+    "notDataActions": {
+      "value": []
+    }
+  }
+}

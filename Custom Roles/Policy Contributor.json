@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "roleName": {
+      "value": "Policy Contributor"
+    },
+    "roleDescription": {
+      "value": "Responsible for creating and managing policy definitions and assignments within Azure. This role also reviews compliance status to ensure policies are correctly applied."
+    },
+    "location": {
+      "value": "canadaeast"
+    },
+    "managementGroupId": {
+      "value": "mg-root"
+    },
+    "scope": {
+      "value": "managementGroup"
+    },
+    "actions": {
+      "value": [
+        "*/read",
+        "Microsoft.Authorization/policyDefinitions/*",
+        "Microsoft.Authorization/policyAssignments/*",
+        "Microsoft.Authorization/policySetDefinitions/*",
+        "Microsoft.Authorization/policyExemptions/*",
+        "Microsoft.PolicyInsights/policyStates/summarize/action"
+      ]
+    },
+    "notActions": {
+      "value": []
+    },
+    "dataActions": {
+      "value": []
+    },
+    "notDataActions": {
+      "value": []
+    }
+  }
+}

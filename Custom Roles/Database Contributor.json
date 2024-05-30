@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "roleName": {
+      "value": "Database Contributor"
+    },
+    "roleDescription": {
+      "value": "Manages database resources within the scope, with permissions limited to essential management tasks under a zero-trust architecture."
+    },
+    "location": {
+      "value": "canadaeast"
+    },
+    "managementGroupId": {
+      "value": "mg-root"
+    },
+    "scope": {
+      "value": "managementGroup"
+    },
+    "actions": {
+      "value": [
+        "*/read",
+        "Microsoft.Sql/servers/databases/*",
+        "Microsoft.DocumentDB/databaseAccounts/*",
+        "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/*",
+        "Microsoft.Support/*"
+      ]
+    },
+    "notActions": {
+      "value": [
+        "Microsoft.Sql/servers/databases/securityAlertPolicies/write",
+        "Microsoft.Sql/servers/databases/transparentDataEncryption/write",
+        "Microsoft.Sql/servers/databases/auditingSettings/write"
+      ]
+    },
+    "dataActions": {
+      "value": [
+        "Microsoft.Sql/servers/databases/data/read",
+        "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read"
+      ]
+    },
+    "notDataActions": {
+      "value": [
+        "Microsoft.Sql/servers/databases/data/write"
+      ]
+    }
+  }
+}
